@@ -1,9 +1,7 @@
+from pprint import pprint
 from collections import Counter
 import json
-#import xml.etree.ElementTree as ET
 
-#tree = ET.parse("files/newsafr.xml")
-#titles = []
 
 with open("files/newsafr.json", encoding="utf_8_sig") as datafile:
   js_data = json.load(datafile)
@@ -32,4 +30,4 @@ while i < len(a):
 		i += 1
 
 counts = Counter(a_2)
-print(counts.most_common(10))
+pprint(counts.most_common(10))
