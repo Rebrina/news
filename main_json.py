@@ -1,4 +1,4 @@
-from pprint import pprint
+from collections import Counter
 import json
 #import xml.etree.ElementTree as ET
 
@@ -19,16 +19,17 @@ for rss in js_data:
         news_content = js_data['rss']['channel']['items'][i]['description']
         news_description = news_description + news_content
         i += 1
-        print(i)
 
 a = news_description.split(' ')
 
-print(a)
+a_2 = []
+i = 0
+while i < len(a):
+	if len(a[i]) > 6:
+		a_2.append(a[i])
+		del a[i]
+	else:
+		i += 1
 
-def sortByLength(inputStr):
-        return len(inputStr)
-
-a.sort(key=sortByLength, reverse=True)
-
-for i in range(0,10):
-  print(a[i])
+counts = Counter(a_2)
+print(counts.most_common(10))
