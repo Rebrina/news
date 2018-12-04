@@ -20,7 +20,7 @@ for xmli in xml_items:
 #print(news_description)
 
 a = news_description.split(' ')
-a = [element.lower() for element in a] ; a
+a = [element.lower() for element in a]
 
 a_2 = []
 i = 0
