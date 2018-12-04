@@ -19,6 +19,7 @@ for rss in js_data:
         i += 1
 
 a = news_description.split(' ')
+a = [element.lower() for element in a] ; a
 
 a_2 = []
 i = 0
